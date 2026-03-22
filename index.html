@@ -31,12 +31,13 @@
         }
 
         body, html {
-            height: 100%;
-            width: 100%;
+            height: 100vh;
+            width: 100vw;
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
             background-color: var(--pastel-black);
             color: var(--pastel-white);
+            position: fixed; /* Prevenir scroll accidental en móviles */
         }
 
         /* ============================================================
@@ -46,8 +47,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
                         url('https://images.unsplash.com/photo-1470509037663-253afd7f0f51?q=80&w=1974&auto=format&fit=crop');
             background-size: cover;
@@ -61,13 +62,16 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             z-index: -1;
             background-color: transparent;
             transition: background-color var(--transition-speed) ease;
             pointer-events: none;
             backdrop-filter: brightness(0.9);
+            /* Asegurar que cubra todo en cualquier navegador */
+            right: 0;
+            bottom: 0;
         }
 
         @keyframes backgroundZoom {
@@ -699,9 +703,12 @@
             currentWordIndex = (currentWordIndex + 1) % loveWords.length;
             
             // Posicionamiento seguro (evitar bordes y superposiciones extremas)
-            const xPos = Math.random() * 60 + 20; // 20% a 80% del ancho
+            const xPos = Math.random() * 60 + 15; // 15% a 75% del ancho para móviles
             wordElement.style.left = `${xPos}vw`;
             wordElement.style.top = `-120px`;
+            wordElement.style.width = 'fit-content';
+            wordElement.style.textAlign = 'center';
+            wordElement.style.transform = 'translateX(-50%)'; // Centrar respecto al punto X
             
             // Color del tema actual
             const theme = themes[(currentThemeIndex === 0 ? themes.length - 1 : currentThemeIndex - 1)];
