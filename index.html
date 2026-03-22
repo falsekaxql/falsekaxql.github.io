@@ -83,20 +83,22 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* min-height para móviles */
             text-align: center;
-            padding: 20px;
+            padding: 1.5rem; /* Usar rem */
+            position: relative;
+            z-index: 5;
         }
 
         .glass-card {
             background: var(--white-glass);
             backdrop-filter: blur(15px) saturate(150%);
             -webkit-backdrop-filter: blur(15px) saturate(150%);
-            border-radius: 30px;
+            border-radius: 2rem; /* Usar rem */
             border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 50px;
+            padding: 3.5rem 2rem; /* Padding fluido */
             max-width: 600px;
-            width: 90%;
+            width: 100%; /* Ocupar todo el ancho disponible */
             box-shadow: 0 0 40px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05);
             animation: fadeInCard 2.5s ease-out;
             transition: all var(--transition-speed) ease;
@@ -109,19 +111,18 @@
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-size: clamp(2.2rem, 10vw, 4rem); /* clamp para tamaño fluido */
             color: var(--pastel-white);
-            margin-bottom: 25px;
-            /* Brillo Inicial */
+            margin-bottom: 1.5rem;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3);
             transition: text-shadow var(--transition-speed) ease;
         }
 
         p {
-            font-size: clamp(1rem, 4vw, 1.3rem);
+            font-size: clamp(1rem, 4.5vw, 1.3rem); /* clamp para tamaño fluido */
             color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 40px;
-            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
             font-weight: 500;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
             transition: text-shadow var(--transition-speed) ease;
@@ -132,20 +133,21 @@
            ============================================================ */
         .btn-romantic {
             position: relative;
-            padding: 22px 45px;
-            font-size: 1.2rem;
+            padding: 1.2rem 2.5rem;
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: var(--pastel-black);
             background: var(--pastel-white);
             border: none;
-            border-radius: 60px;
+            border-radius: 4rem;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
             z-index: 10;
             outline: none;
+            width: fit-content;
         }
 
         .btn-romantic:hover, .btn-romantic:focus {
@@ -198,80 +200,127 @@
         }
 
         /* ============================================================
-           11. RESPONSIVE DESIGN
+           11. RESPONSIVE DESIGN (DETALLADO)
            ============================================================ */
-        @media (max-width: 480px) {
-            .glass-card { padding: 40px 25px; width: 95%; }
-            h1 { font-size: 2.8rem; margin-bottom: 20px; }
-            p { font-size: 1.1rem; margin-bottom: 30px; }
-            .btn-romantic { padding: 18px 35px; font-size: 1rem; letter-spacing: 2px; }
+        @media (max-width: 768px) {
+            .glass-card {
+                padding: 2.5rem 1.5rem;
+                border-radius: 1.5rem;
+            }
+            h1 { font-size: 2.5rem; }
+            p { font-size: 1.1rem; }
         }
 
-        /* CONTROLES DE AUDIO (AESTHETIC) */
+        @media (max-width: 480px) {
+            .glass-card { 
+                padding: 2rem 1.2rem; 
+                width: 100%; 
+            }
+            h1 { font-size: 2rem; margin-bottom: 1rem; }
+            p { font-size: 1rem; margin-bottom: 2rem; }
+            .btn-romantic { 
+                padding: 1rem 2rem; 
+                width: 100%; /* Botón ancho completo en móviles pequeños */
+                max-width: 280px;
+            }
+            .audio-controls {
+                width: 95vw;
+                padding: 10px 15px;
+            }
+        }
+
+        /* Orientación Landscape en móviles */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .main-content { padding: 1rem; }
+            .glass-card { padding: 1.5rem; }
+            h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+            p { margin-bottom: 1rem; }
+            .audio-controls { bottom: 10px; }
+        }
+
+        /* CONTROLES DE AUDIO (AESTHETIC & RESPONSIVE) */
         .audio-controls {
             position: fixed;
-            bottom: 40px;
+            bottom: clamp(20px, 5vh, 40px);
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             align-items: center;
-            gap: 25px; /* Espaciado entre volumen y botón */
+            gap: clamp(15px, 4vw, 25px);
             z-index: 100;
             transition: all 0.5s ease;
-            padding: 10px 20px;
+            padding: 12px 24px;
+            background: rgba(0, 0, 0, 0.3); /* Fondo sutil para legibilidad en móviles */
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: fit-content;
+            max-width: 90vw;
         }
 
         .audio-controls:hover {
-            transform: translateX(-50%) scale(1.05);
+            transform: translateX(-50%) scale(1.02);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .volume-slider {
-            width: 120px;
+            width: clamp(80px, 25vw, 150px);
             cursor: pointer;
             accent-color: var(--pastel-white);
-            height: 4px;
-            background: rgba(255, 255, 255, 0.3);
+            height: 6px; /* Más grueso para táctil */
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             appearance: none;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            outline: none;
         }
 
         .volume-slider::-webkit-slider-thumb {
             appearance: none;
-            width: 16px;
-            height: 16px;
+            width: 20px; /* Más grande para táctil */
+            height: 20px;
             background: #fff;
             border-radius: 50%;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
             border: 2px solid rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
 
-        /* BOTÓN DE CAMBIO DE MÚSICA (ULTRA-MINIMALISTA) */
+        /* BOTÓN DE CAMBIO DE MÚSICA (MEJORADO PARA MÓVIL) */
         .music-toggle-btn {
-            width: 12px;
-            height: 12px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border: none;
+            width: 32px; /* Área táctil más grande */
+            height: 32px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.8);
             border-radius: 50%;
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.4s ease;
             outline: none;
             padding: 0;
+            position: relative;
         }
 
-        .music-toggle-btn:hover {
-            transform: scale(1.5);
-            background-color: #FFFFFF;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        /* Punto central aesthetic */
+        .music-toggle-btn::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
         }
 
-        .music-toggle-btn:active {
-            transform: scale(0.9);
+        .music-toggle-btn:hover, .music-toggle-btn:active {
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
         }
 
         .music-toggle-btn.playing {
             animation: pulse-glow 2s infinite;
+            border-color: #fff;
         }
 
         @keyframes pulse-glow {
@@ -684,38 +733,36 @@
         // Carga inicial
         loadLoveWords();
 
-        // Generador de pétalos (Brillantes y Tematizados)
+        // Generador de pétalos (Brillantes y Tematizados - Optimizado para móvil)
         function createPetal() {
+            // Limitar pétalos en móviles para evitar lag
+            const maxPetals = window.innerWidth < 768 ? 20 : 50;
+            if (petalContainer.childElementCount > maxPetals) return;
+
             const petal = document.createElement('div');
             petal.classList.add('petal');
             
-            const size = Math.random() * 18 + 12; // Un poco más grandes para lucir el brillo
+            const size = Math.random() * 15 + 10; 
             petal.style.width = `${size}px`;
             petal.style.height = `${size}px`;
             
-            petal.style.left = Math.random() * 105 - 2.5 + 'vw'; 
-            petal.style.animationDuration = Math.random() * 6 + 7 + 's';
-            petal.style.animationDelay = Math.random() * 2 + 's';
+            petal.style.left = Math.random() * 100 + 'vw'; 
+            petal.style.animationDuration = Math.random() * 5 + 8 + 's';
             
-            // Usar colores del tema actual (ajustado para que los pétalos ya lanzados mantengan su color o usen el nuevo)
             const theme = themes[(currentThemeIndex === 0 ? themes.length - 1 : currentThemeIndex - 1)];
-            const colors = theme.petals;
-            const chosenColor = colors[Math.floor(Math.random() * colors.length)];
+            const chosenColor = theme.petals[Math.floor(Math.random() * theme.petals.length)];
             
             petal.style.backgroundColor = chosenColor;
-            petal.style.filter = `drop-shadow(0 0 10px ${chosenColor})`;
+            petal.style.filter = `drop-shadow(0 0 8px ${chosenColor})`;
             
             petalContainer.appendChild(petal);
 
-            setTimeout(() => {
-                petal.remove();
-            }, 15000);
+            setTimeout(() => petal.remove(), 12000);
         }
 
-        for(let i = 0; i < 15; i++) {
-            setTimeout(createPetal, Math.random() * 3000);
-        }
-        setInterval(createPetal, 450);
+        // Frecuencia adaptativa
+        const petalFrequency = window.innerWidth < 768 ? 800 : 450;
+        setInterval(createPetal, petalFrequency);
 
         // Intento de inicio de audio al cargar
         window.addEventListener('DOMContentLoaded', () => {
