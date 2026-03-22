@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melany el amor de mi vida 💖</title>
+    <!-- Google Fonts: Una tipografía elegante y cursiva para el toque romántico -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           1. VARIABLES Y ESTILOS GENERALES (PASTEL BRILLANTE)
+           ============================================================ */
+        :root {
+            /* Colores Base Pastel */
+            --pastel-green: #C8E6C9;
+            --pastel-pink: #F8BBD0;
+            --pastel-white: #FFFFFF;
+            --pastel-blue: #B3E5FC;
+            --pastel-black: #000000; /* NEGRO PURO */
+            
+            /* Colores de Acento (Glow) */
+            --accent-glow: rgba(255, 255, 255, 0.8);
+            --transition-speed: 0.8s;
+            --white-glass: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            background-color: var(--pastel-black);
+            color: var(--pastel-white);
+        }
+
+        /* ============================================================
+           2. FONDO DINÁMICO (GIRASOLES CON BRILLO PASTEL)
+           ============================================================ */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
+                        url('https://images.unsplash.com/photo-1470509037663-253afd7f0f51?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+            animation: backgroundZoom 40s infinite alternate ease-in-out;
+            will-change: transform;
+        }
+
+        .color-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: transparent;
+            transition: background-color var(--transition-speed) ease;
+            pointer-events: none;
+            backdrop-filter: brightness(0.9);
+        }
+
+        @keyframes backgroundZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        /* ============================================================
+           3. DISEÑO DEL CONTENIDO (GLASSMORPHISM BRILLANTE)
+           ============================================================ */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .glass-card {
+            background: var(--white-glass);
+            backdrop-filter: blur(15px) saturate(150%);
+            -webkit-backdrop-filter: blur(15px) saturate(150%);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 50px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05);
+            animation: fadeInCard 2.5s ease-out;
+            transition: all var(--transition-speed) ease;
+        }
+
+        @keyframes fadeInCard {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: var(--pastel-white);
+            margin-bottom: 25px;
+            /* Brillo Inicial */
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3);
+            transition: text-shadow var(--transition-speed) ease;
+        }
+
+        p {
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            font-weight: 500;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            transition: text-shadow var(--transition-speed) ease;
+        }
+
+        /* ============================================================
+           4. BOTÓN ROMÁNTICO (INTERACTIVO Y BRILLANTE)
+           ============================================================ */
+        .btn-romantic {
+            position: relative;
+            padding: 22px 45px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--pastel-black);
+            background: var(--pastel-white);
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            z-index: 10;
+            outline: none;
+        }
+
+        .btn-romantic:hover, .btn-romantic:focus {
+            transform: translateY(-10px) scale(1.08);
+            background: var(--pastel-white);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.4);
+            color: #000;
+        }
+
+        .btn-romantic:active {
+            transform: translateY(-4px) scale(0.98);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+        }
+
+        /* ============================================================
+           5. EFECTO DE PÉTALOS BRILLANTES (INMERSIVO)
+           ============================================================ */
+        #petal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .petal {
+            position: absolute;
+            background-color: var(--pastel-white);
+            border-radius: 150% 0 150% 0;
+            opacity: 0;
+            animation: fall linear infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+            box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes fall {
+            0% { 
+                transform: translateY(-15vh) translateX(0) rotate(0deg); 
+                opacity: 0; 
+            }
+            15% { opacity: 0.9; }
+            85% { opacity: 0.9; }
+            100% { 
+                transform: translateY(115vh) translateX(120px) rotate(720deg); 
+                opacity: 0; 
+            }
+        }
+
+        /* ============================================================
+           11. RESPONSIVE DESIGN
+           ============================================================ */
+        @media (max-width: 480px) {
+            .glass-card { padding: 40px 25px; width: 95%; }
+            h1 { font-size: 2.8rem; margin-bottom: 20px; }
+            p { font-size: 1.1rem; margin-bottom: 30px; }
+            .btn-romantic { padding: 18px 35px; font-size: 1rem; letter-spacing: 2px; }
+        }
+
+        /* CONTROLES DE AUDIO (AESTHETIC) */
+        .audio-controls {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Espaciado entre volumen y botón */
+            z-index: 100;
+            transition: all 0.5s ease;
+            padding: 10px 20px;
+        }
+
+        .audio-controls:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .volume-slider {
+            width: 120px;
+            cursor: pointer;
+            accent-color: var(--pastel-white);
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            appearance: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* BOTÓN DE CAMBIO DE MÚSICA (ULTRA-MINIMALISTA) */
+        .music-toggle-btn {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            transition: all 0.4s ease;
+            outline: none;
+            padding: 0;
+        }
+
+        .music-toggle-btn:hover {
+            transform: scale(1.5);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        .music-toggle-btn:active {
+            transform: scale(0.9);
+        }
+
+        .music-toggle-btn.playing {
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+        }
+
+        /* PARTÍCULAS DE TEXTO */
+        .love-word {
+            position: absolute;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            pointer-events: none;
+            z-index: 2;
+            white-space: nowrap;
+            text-shadow: 0 0 15px currentColor;
+            will-change: transform, opacity;
+        }
+
+        .audio-icon {
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Ocultar el reproductor nativo */
+        #audio-player { display: none; }
+    </style>
+
+</head>
+<body>
+
+    <div class="background-container"></div>
+    <div class="color-overlay" id="colorOverlay"></div>
+    <div id="petal-container"></div>
+
+    <div class="main-content">
+        <div class="glass-card">
+            <h1>Para mi melany</h1>
+            <p>Eres lo que mas quiero en este mundo</p>
+            
+            <button class="btn-romantic" id="actionButton">
+                regalo OMGA
+            </button>
+        </div>
+    </div>
+
+    <!-- CONTROLES DE VOLUMEN Y MÚSICA -->
+    <div class="audio-controls">
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1" value="0.5" aria-label="Control de volumen">
+        <button class="music-toggle-btn" id="musicToggleBtn" aria-label="Siguiente pista"></button>
+    </div>
+
+    <!-- 
+        ============================================================
+        7. CONFIGURACIÓN DE MÚSICA (REDUCCIÓN AUTOMÁTICA)
+        ============================================================
+        INSTRUCCIONES: 
+        1. Coloca tu archivo de música en la misma carpeta que este archivo.
+        2. Formatos soportados: .mp3, .ogg, .wav
+        3. Cambia el valor de 'src=""' por el nombre de tu archivo.
+        
+        EJEMPLO: <source src="mi-cancion.mp3" type="audio/mpeg">
+    -->
+    <audio id="audio-player-1" autoplay loop></audio>
+    <audio id="audio-player-2" loop></audio>
+
+    <script>
+        /* 
+           ============================================================
+           8. LÓGICA DE INTERACCIÓN Y PERSONALIZACIÓN
+           ============================================================
+        */
+
+        // >>> CONFIGURACIÓN DE YOUTUBE <<<
+        const YOUTUBE_URL = "https://www.youtube.com/watch?v=5WSmcJZivTk"; 
+
+        const btn = document.getElementById('actionButton');
+        const audio1 = document.getElementById('audio-player-1');
+        const audio2 = document.getElementById('audio-player-2');
+        const petalContainer = document.getElementById('petal-container');
+        const colorOverlay = document.getElementById('colorOverlay');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const musicToggleBtn = document.getElementById('musicToggleBtn');
+
+        // >>> CONFIGURACIÓN DE MÚSICA (20 CÓDIGOS/SLOTS) <<<
+        // INSTRUCCIONES: Cambia los nombres por tus archivos (ej. "mi-cancion.mp3").
+        // Si dejas "" el sistema ignorará ese slot.
+        const playlist = [
+            { src: "music/Strawberry.mp3" },   // Código 1
+            { src: "music/Dos.mp3" },     // Código 2
+            { src: "music/For.mp3" }, // Código 3
+            { src: "music/How.mp3" },  // Código 4
+            { src: "music/Cariño.mp3" },   // Código 5
+            { src: "music/Falling.mp3" },    // Código 6
+            { src: "music/Harvey.mp3" },   // Código 7
+            { src: "music/Bruno.mp3" },    // Código 8
+            { src: "music/SWEET.mp3" },   // Código 9
+            { src: "music/Loco.mp3" },    // Código 10
+            { src: "music/Caligaris.mp3" },    // Código 11
+            { src: "music/Canela.mp3" },    // Código 12
+            { src: "music/Mars.mp3" },   // Código 13
+            { src: "music/Smile.mp3" }, // Código 14
+            { src: "music/Faro.mp3" },  // Código 15
+            { src: "music/Mañana.mp3" }, // Código 16
+            { src: "music/Amaré.mp3" }, // Código 17
+            { src: "music/Contigo.mp3" },  // Código 18
+        ].filter(track => track.src !== ""); 
+
+        // --- LÓGICA DE AUDIO CON TRANSICIONES SUAVES (ROBUSTA) ---
+        
+        let activePlayer = audio1;
+        let inactivePlayer = audio2;
+        let currentTrackIndex = 0;
+        let userVolume = 0.5;
+        let isTransitioning = false;
+        let tracksAttempted = 0; // Failsafe para evitar bucles infinitos
+
+        audio1.volume = userVolume;
+        audio2.volume = 0;
+        
+        // Inicializar primer track
+        if (playlist.length > 0) {
+            audio1.src = playlist[currentTrackIndex].src;
+            audio1.load();
+        }
+
+        function updateMusicUI() {
+            if (activePlayer.paused && !isTransitioning) {
+                musicToggleBtn.classList.remove('playing');
+            } else {
+                musicToggleBtn.classList.add('playing');
+            }
+        }
+
+        // Manejador central de errores de audio
+        function handleAudioError(e) {
+            console.warn("Error en pista:", playlist[currentTrackIndex].src, "Saltando...");
+            // Solo saltar si no estamos ya en una transición de error
+            if (!isTransitioning) {
+                switchTrack();
+            } else {
+                // Si ya estamos "transicionando" (cargando), permitimos que el .catch() de play() lo maneje
+                console.log("Ya en transición, esperando al catch...");
+            }
+        }
+
+        audio1.addEventListener('error', handleAudioError);
+        audio2.addEventListener('error', handleAudioError);
+
+        async function switchTrack() {
+            if (playlist.length === 0) return;
+            if (isTransitioning && tracksAttempted === 0) return; // Bloquear si ya hay una transición real en curso
+
+            isTransitioning = true;
+            
+            // Incrementar índice y failsafe
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            tracksAttempted++;
+
+            // Si hemos intentado todas las pistas y ninguna funciona, detenerse
+            if (tracksAttempted > playlist.length) {
+                console.error("Ninguna pista en el playlist funciona. Deteniendo búsqueda.");
+                isTransitioning = false;
+                tracksAttempted = 0;
+                updateMusicUI();
+                return;
+            }
+
+            const nextTrack = playlist[currentTrackIndex];
+            console.log(`Intentando cargar: ${nextTrack.src} (Intento ${tracksAttempted}/${playlist.length})`);
+            
+            try {
+                // Preparar el jugador inactivo
+                inactivePlayer.pause();
+                inactivePlayer.src = nextTrack.src;
+                inactivePlayer.volume = 0;
+                inactivePlayer.load();
+
+                // Intentar reproducir
+                await inactivePlayer.play();
+                
+                // Si llegamos aquí, la pista se cargó y empezó a sonar con éxito
+                tracksAttempted = 0; // Resetear failsafe
+
+                const transitionDuration = 500; 
+                const steps = 20;
+                const interval = transitionDuration / steps;
+                let currentStep = 0;
+
+                const fadeEffect = setInterval(() => {
+                    currentStep++;
+                    const progress = currentStep / steps;
+
+                    activePlayer.volume = Math.max(0, userVolume * (1 - progress));
+                    inactivePlayer.volume = Math.min(userVolume, userVolume * progress);
+
+                    if (currentStep >= steps) {
+                        clearInterval(fadeEffect);
+                        activePlayer.pause();
+                        activePlayer.volume = 0;
+                        
+                        // Intercambiar roles
+                        const temp = activePlayer;
+                        activePlayer = inactivePlayer;
+                        inactivePlayer = temp;
+                        
+                        activePlayer.volume = userVolume;
+                        isTransitioning = false;
+                        updateMusicUI();
+                    }
+                }, interval);
+
+            } catch (err) {
+                console.error("Fallo al reproducir:", nextTrack.src, err);
+                // Si falla, intentamos la siguiente inmediatamente
+                // No reseteamos isTransitioning para mantener el "bloqueo" de entrada de usuario
+                // pero permitimos que la recursión continúe controlada
+                setTimeout(() => switchTrack(), 100); 
+            }
+        }
+
+        musicToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (activePlayer.paused && !isTransitioning) {
+                activePlayer.play().then(() => updateMusicUI()).catch(e => console.log("Blocked by browser"));
+            } else {
+                switchTrack();
+            }
+        });
+
+        volumeSlider.addEventListener('input', (e) => {
+            userVolume = parseFloat(e.target.value);
+            if (!isTransitioning) {
+                activePlayer.volume = userVolume;
+            }
+        });
+
+        // Intentar reproducir audio al interactuar con cualquier parte de la página
+        document.body.addEventListener('click', () => {
+            if (activePlayer.paused && !isTransitioning) {
+                activePlayer.play().then(() => updateMusicUI()).catch(e => console.log("Audio still blocked"));
+            }
+        }, { once: true });
+
+        // --- SISTEMA DE TEMAS DINÁMICOS (PALETA EXCLUSIVA: VERDE, ROSADO, BLANCO, CELESTE, NEGRO) ---
+        const themes = [
+            { 
+                name: 'Verde', 
+                bg: 'rgba(200, 230, 201, 0.25)', 
+                petals: ['#C8E6C9', '#A5D6A7', '#81C784', '#E8F5E9'],
+                accent: 'rgba(76, 175, 80, 0.8)' 
+            },
+            { 
+                name: 'Rosado', 
+                bg: 'rgba(248, 187, 208, 0.25)', 
+                petals: ['#F8BBD0', '#F48FB1', '#F06292', '#FCE4EC'],
+                accent: 'rgba(233, 30, 99, 0.8)'
+            },
+            { 
+                name: 'Blanco', 
+                bg: 'rgba(255, 255, 255, 0.2)', 
+                petals: ['#FFFFFF', '#FAFAFA', '#F5F5F5', '#E0E0E0'],
+                accent: 'rgba(255, 255, 255, 0.9)'
+            },
+            { 
+                name: 'Celeste', 
+                bg: 'rgba(179, 229, 252, 0.25)', 
+                petals: ['#B3E5FC', '#81D4FA', '#4FC3F7', '#E1F5FE'],
+                accent: 'rgba(3, 169, 244, 0.8)'
+            },
+            { 
+                name: 'Negro', 
+                bg: 'rgba(0, 0, 0, 0.6)', 
+                petals: ['#424242', '#616161', '#212121', '#FFFFFF'],
+                accent: 'rgba(255, 255, 255, 0.4)'
+            }
+        ];
+
+        let currentThemeIndex = 0;
+        const h1 = document.querySelector('h1');
+        const p = document.querySelector('p');
+
+        function updateTheme() {
+            const theme = themes[currentThemeIndex];
+            
+            // 1. Actualizar fondo con transición suave
+            colorOverlay.style.backgroundColor = theme.bg;
+            
+            // 2. Actualizar brillo de los textos (Efecto Brillante Coherente)
+            const glowColor = theme.accent;
+            h1.style.textShadow = `0 0 20px ${glowColor}, 0 0 40px rgba(255, 255, 255, 0.3)`;
+            p.style.textShadow = `0 0 10px ${glowColor}`;
+            
+            // 3. Ajustar borde de la tarjeta para armonía
+            document.querySelector('.glass-card').style.borderColor = glowColor.replace('0.8', '0.3');
+            
+            console.log(`Cambiando a tema brillante: ${theme.name}`);
+            
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        }
+
+        // Iniciar el intercambio cada 20 segundos
+        setInterval(updateTheme, 20000);
+        updateTheme(); 
+
+        // Manejador del botón central
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            activePlayer.play().catch(e => console.log("Audio play blocked"));
+            
+            // Efecto de brillo intenso al hacer clic
+            btn.style.boxShadow = `0 0 80px white`;
+            
+            setTimeout(() => {
+                window.location.href = YOUTUBE_URL;
+            }, 600);
+        });
+
+        // --- SISTEMA DE PARTÍCULAS DE TEXTO (HOT-RELOAD Y COMPLETO) ---
+        let loveWords = []; 
+        let currentWordIndex = 0;
+        let textIntervalId = null;
+
+        async function loadLoveWords() {
+            try {
+                // Cache-buster para asegurar que siempre cargue la última versión del JSON
+                const response = await fetch(`loveWords.json?t=${Date.now()}`);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const newData = await response.json();
+                
+                // Solo actualizar si hay cambios o es la primera carga
+                if (JSON.stringify(newData) !== JSON.stringify(loveWords)) {
+                    loveWords = newData;
+                    console.log(`✅ ${loveWords.length} frases cargadas/actualizadas.`);
+                    
+                    // Si el índice actual se sale del nuevo rango, resetearlo
+                    if (currentWordIndex >= loveWords.length) currentWordIndex = 0;
+
+                    // Reiniciar el generador con la velocidad optimizada
+                    if (textIntervalId) clearInterval(textIntervalId);
+                    
+                    // Frecuencia fija más rápida (2.5s) para que se vean todas pronto
+                    textIntervalId = setInterval(createLoveWord, 2500);
+                    
+                    // Crear un pequeño "burst" inicial si es la primera carga
+                    if (loveWords.length > 0 && document.querySelectorAll('.love-word').length < 3) {
+                        for(let i=0; i<3; i++) setTimeout(createLoveWord, i * 800);
+                    }
+                }
+            } catch (err) {
+                console.error("❌ Error cargando loveWords.json:", err);
+                if (loveWords.length === 0) {
+                    loveWords = ["Melany, eres la mejor", "eres perfecta", "eres mi todo"];
+                    if (textIntervalId) clearInterval(textIntervalId);
+                    textIntervalId = setInterval(createLoveWord, 3000);
+                }
+            }
+        }
+
+        // Recarga automática cada 30 segundos para detectar cambios en el JSON sin refrescar
+        setInterval(loadLoveWords, 30000);
+
+        function createLoveWord() {
+            if (!loveWords || loveWords.length === 0) return;
+
+            const wordElement = document.createElement('div');
+            wordElement.className = 'love-word';
+            
+            // Selección secuencial estricta
+            const currentText = loveWords[currentWordIndex];
+            wordElement.textContent = currentText;
+            
+            // Avanzar índice para la siguiente
+            currentWordIndex = (currentWordIndex + 1) % loveWords.length;
+            
+            // Posicionamiento seguro (evitar bordes y superposiciones extremas)
+            const xPos = Math.random() * 60 + 20; // 20% a 80% del ancho
+            wordElement.style.left = `${xPos}vw`;
+            wordElement.style.top = `-120px`;
+            
+            // Color del tema actual
+            const theme = themes[(currentThemeIndex === 0 ? themes.length - 1 : currentThemeIndex - 1)];
+            const color = theme.petals[Math.floor(Math.random() * theme.petals.length)];
+            
+            wordElement.style.color = color;
+            // Tamaño dinámico según longitud
+            const baseSize = currentText.length > 25 ? 1.3 : 1.7;
+            wordElement.style.fontSize = `${Math.random() * 0.4 + baseSize}rem`; 
+            
+            // Animación más lenta y legible
+            const duration = Math.random() * 5 + 10; // 10s a 15s (más tiempo para leer)
+            const rotation = Math.random() * 30 - 15; 
+            
+            const animation = wordElement.animate([
+                { transform: `translateY(0) rotate(0deg)`, opacity: 0 },
+                { opacity: 1, offset: 0.1 },
+                { opacity: 1, offset: 0.9 },
+                { transform: `translateY(115vh) rotate(${rotation}deg)`, opacity: 0 }
+            ], {
+                duration: duration * 1000,
+                easing: 'linear'
+            });
+
+            document.body.appendChild(wordElement);
+            animation.onfinish = () => wordElement.remove();
+        }
+
+        // Carga inicial
+        loadLoveWords();
+
+        // Generador de pétalos (Brillantes y Tematizados)
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            
+            const size = Math.random() * 18 + 12; // Un poco más grandes para lucir el brillo
+            petal.style.width = `${size}px`;
+            petal.style.height = `${size}px`;
+            
+            petal.style.left = Math.random() * 105 - 2.5 + 'vw'; 
+            petal.style.animationDuration = Math.random() * 6 + 7 + 's';
+            petal.style.animationDelay = Math.random() * 2 + 's';
+            
+            // Usar colores del tema actual (ajustado para que los pétalos ya lanzados mantengan su color o usen el nuevo)
+            const theme = themes[(currentThemeIndex === 0 ? themes.length - 1 : currentThemeIndex - 1)];
+            const colors = theme.petals;
+            const chosenColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            petal.style.backgroundColor = chosenColor;
+            petal.style.filter = `drop-shadow(0 0 10px ${chosenColor})`;
+            
+            petalContainer.appendChild(petal);
+
+            setTimeout(() => {
+                petal.remove();
+            }, 15000);
+        }
+
+        for(let i = 0; i < 15; i++) {
+            setTimeout(createPetal, Math.random() * 3000);
+        }
+        setInterval(createPetal, 450);
+
+        // Intento de inicio de audio al cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            const playPromise = activePlayer.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => updateMusicUI()).catch(() => {
+                    console.log("Autoplay requiere interacción del usuario.");
+                    updateMusicUI(); // Asegurar que el icono sea correcto aunque no inicie
+                });
+            }
+        });
+    </script>
+
+
+
+
+</body>
+</html>
